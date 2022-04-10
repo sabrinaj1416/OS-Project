@@ -2,23 +2,24 @@ package main;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Random;
 
 public class Process {
 
 	private int PID;
 	private String Task;
 	private int Priority;
-	private LocalTime Arrivaltime;
+	private Random Arrivaltime;
 	private LocalTime Starttime;
 	private LocalTime Endtime;
 	private LocalTime BlockTime;
-	private LocalTime BurstTime;
+	private Random BurstTime;
 	public Process() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public Process(int pID, String task, int priority, LocalTime arrivaltime, LocalTime starttime,
-			LocalTime endtime, LocalTime blockTime, LocalTime burstTime) {
+	
+	public Process(int pID, String task, int priority, Random arrivaltime, LocalTime starttime,
+			LocalTime endtime, LocalTime blockTime, Random burstTime) {
 		super();
 		PID = pID;
 		Task = task;
@@ -29,78 +30,95 @@ public class Process {
 		BlockTime = blockTime;
 		BurstTime = burstTime;
 	}
+	
 	public int getPID() {
 		return PID;
 	}
+	
 	public void setPID(int pID) {
 		PID = pID;
 	}
+	
 	public String getTask() {
 		return Task;
 	}
+	
 	public void setTask(String task) {
 		Task = task;
 	}
+	
 	public int getPriority() {
 		return Priority;
 	}
+	
 	public void setPriority(int priority) {
 		Priority = priority;
 	}
-	public LocalTime getArrivaltime() {
+	
+	public Random getArrivaltime() {
 		return Arrivaltime;
 	}
-	public void setArrivaltime(LocalTime arrivaltime) {
+	
+	public void setArrivaltime(Random arrivaltime) {
 		Arrivaltime = arrivaltime;
 	}
+	
 	public LocalTime getStarttime() {
 		return Starttime;
 	}
+	
 	public void setStarttime(LocalTime starttime) {
 		Starttime = starttime;
 	}
+	
 	public LocalTime getEndtime() {
 		return Endtime;
 	}
+	
 	public void setEndtime(LocalTime endtime) {
 		Endtime = endtime;
 	}
+	
 	public LocalTime getBlockTime() {
 		return BlockTime;
 	}
+	
 	public void setBlockTime(LocalTime blockTime) {
 		BlockTime = blockTime;
 	}
-	public LocalTime getBurstTime() {
+
+	public Random getBurstTime() {
 		return BurstTime;
 	}
-	public void setBurstTime(LocalDateTime burstTime) {
-		BurstTime = LocalTime.now();
+	
+	public void setBurstTime(Random burstTime) {
+		BurstTime = burstTime;
 	}
 	
 	public void AddRecord(){
-
+		//i.	Add Record: randomly generates a resource record and updates that record -  id (1-20) and data value (1-100)
+	
 	}
 
 	public void RemoveRecord() {
-
+		//ii.	Remove Record: randomly generates a record id (1-20) and sets that records data value to 0
+	
 	}
 
 	public void RetrieveRecord() {
-		
+	//	iii.	Retrieve a Record: randomly generates a record id then reads and outputs the data value for that id.	
 	}
 
 	public void CalculateTotal() {
-		
+	//iv.	Calculate Record Data Total: 
+
 	}
 	
 	@Override
 	public String toString() {
-		return "PID: " + PID + ", Task: " + Task + ", Priority: " + Priority + ", Arrivaltime: " + Arrivaltime
-				+ ", Starttime: " + Starttime + ", Endtime: " + Endtime + ", BlockTime: " + BlockTime + ", BurstTime: "
-				+ BurstTime + "]";
-	} 
-	
-	
+		return "Process ID: " + PID + "Task: " + Task + ", Priority: " + Priority + "Arrivaltime: " + Arrivaltime
+				+ "Starttime: " + Starttime + "Endtime: " + Endtime + "BlockTime: " + BlockTime + "BurstTime: "
+				+ BurstTime;
+	} 	
 
 }
